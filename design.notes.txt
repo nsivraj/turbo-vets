@@ -1,4 +1,4 @@
-Vehicles -- keeps track of vehicle information -- manage vehicles
+Vehicles -- keeps track of vehicle information -- manage vehicles(Dave)
 Users -- login and roles, both employees and customers
 Vendors -- no vendors table (need to add one) -- we may not need a vendor table
 Expense -- parts as description and labor as a type -- PartsLabor
