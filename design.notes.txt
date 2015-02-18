@@ -1,0 +1,12 @@
+Vehicles -- keeps track of vehicle information -- manage vehicles
+Users -- login and roles, both employees and customers
+Vendors -- no vendors table (need to add one) -- we may not need a vendor table
+Expense -- parts as description and labor as a type -- PartsLabor
+Customers -- BuyerContactInfo
+Reports -- which reports
+
+Roles - Admin and Customer
+
+Based on users role show different menu actions in the left menu structure
+Based on users role determine differing functionality in pages of app
+
