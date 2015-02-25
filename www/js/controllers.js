@@ -47,6 +47,8 @@ angular.module('starter.controllers', [])
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
 
-.controller('VehiclesCtrl', function($scope) {
+.controller('VehiclesCtrl', function($scope, Vehicles) {
+	$scope.vroom = Vehicles.all();
+	
 	
 });

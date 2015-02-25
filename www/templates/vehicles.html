@@ -1,5 +1,13 @@
 <ion-view view-title="Vehicle List">
   <ion-content>
     <h1>Vehicle List</h1>
+    <ul class="dataTable">
+    <li class="row dataRow">
+    <span class="col">Make</span> <span class="col">Model</span> <span class="col">Year</span> <span class="col">VIN</span>
+    </li>
+    <li class="row dataRow" ng-repeat="vehicle in vroom">
+    <span class="col">{{vehicle.make}}</span> <span class="col">{{vehicle.model}}</span> <span class="col">{{vehicle.year}}</span> <span class="col">{{vehicle.vin}}</span>
+    </li>
+    </ul>
   </ion-content>
 </ion-view>
