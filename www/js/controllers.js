@@ -51,4 +51,12 @@ angular.module('starter.controllers', [])
 	$scope.vroom = Vehicles.all();
 	
 	
+})
+
+.controller('AddVehicleCtrl', function($scope, $stateParams, Vehicles) {
+	$scope.vehicle = {};
+	
+	$scope.saveVehicle = function(vehicle) {
+		Vehicles.save(vehicle);
+	};
 });

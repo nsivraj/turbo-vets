@@ -1,31 +1,61 @@
 angular.module('starter.services', [])
 
-.factory('JsonData', function($http) {
+//.factory('JsonData', function($http) {
+//	return {
+//		get: function(url) {
+//			var httpReq = {
+//				method: 'GET',
+//				url: url
+//			};
+//			return $http(httpReq);
+//		}
+//	}
+//})
+
+.factory('DB', function() {
+	var db = new PouchDB('turbo-vets');
+	var remoteCouch = false;
+	
 	return {
-		get: function(url) {
-			var httpReq = {
-				method: 'GET',
-				url: url
-			};
-			return $http(httpReq);
+		db: function() {
+			return db;
 		}
 	}
 })
 
-.factory('Vehicles', function(JsonData) {
-	var vehicles = {};
-	
+.factory('Vehicles', function(DB) {
+	DB.db().info().then(function (info) {
+		  console.log(info);
+	});
+	var vehicles = [];
+	DB.db().allDocs({include_docs: true}, function(err, response) {
+		for(var i=0; i < response.rows.length; ++i) {
+			vehicles.push(response.rows[i].doc);
+		}
+	});
+		
 	//JsonData.get('/vehicles').then(function(data) {
-	JsonData.get('http://api.geonames.org/citiesJSON?north=44.1&south=-9.9&east=-22.4&west=55.2&lang=de&username=demo').then(function(data) {
-		vehicles = data.data;
-	}, function(data) {
+	//JsonData.get('http://api.geonames.org/citiesJSON?north=44.1&south=-9.9&east=-22.4&west=55.2&lang=de&username=demo').then(function(data) {
+	//	vehicles = data.data;
+	//}, function(data) {
 	    //error handling should go here
 	    //window.alert(data);
-	});
+	//});
 	
 	return {
 		all: function() {
 			return vehicles;
+		},
+		save: function(vehicle) {
+			console.log(vehicle);
+			DB.db().put(vehicle).then(function() {
+				DB.db().allDocs({include_docs: true}, function(err, response) {
+					vehicles.splice(0,vehicles.length)
+					for(var i=0; i < response.rows.length; ++i) {
+						vehicles.push(response.rows[i].doc);
+					}
+				});
+			});
 		}
 	};
 });

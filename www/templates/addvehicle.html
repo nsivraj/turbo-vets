@@ -1,0 +1,48 @@
+<ion-view title="Add Vehicle">
+  <ion-content has-header="true" padding="true">
+  <label class="item item-input">
+    <div class="input-label">
+      Make of Vehicle:
+    </div>
+    <input type="text" maxlength="80" ng-model="vehicle.make"/>
+  </label>
+  <label class="item item-input">
+    <div class="input-label">
+      Model of Vehicle:
+    </div>
+    <input type="text" maxlength="80" ng-model="vehicle.model"/>
+  </label>
+  <label class="item item-input">
+    <div class="input-label">
+      Year of Vehicle:
+    </div>
+    <input type="text" maxlength="80" ng-model="vehicle.year"/>
+  </label>
+  <label class="item item-input">
+    <div class="input-label">
+      Color of Vehicle:
+    </div>
+    <input type="text" maxlength="80" ng-model="vehicle.color"/>
+  </label>
+  <label class="item item-input">
+    <div class="input-label">
+      Description of Vehicle:
+    </div>
+    <input type="text" maxlength="80" ng-model="vehicle.description"/>
+  </label>
+  <label class="item item-input">
+    <div class="input-label">
+      Status of Vehicle:
+    </div>
+    <input type="text" maxlength="80" ng-model="vehicle.status"/>
+  </label>
+  <label class="item item-input">
+    <div class="input-label">
+      VIN of Vehicle:
+    </div>
+    <input type="text" maxlength="80" ng-model="vehicle._id"/>
+  </label>
+  <br/>
+  <button class="button icon ion-checkmark-round" ng-click="saveVehicle(vehicle)">Save</button>
+  </ion-content>
+</ion-view>

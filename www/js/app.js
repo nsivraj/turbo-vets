@@ -67,7 +67,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         controller: 'PlaylistCtrl'
       }
     }
-  });
+  })
+  
+  	.state('app.addvehicle', {
+	  url: "/addvehicle?copyIndex",
+	  views: {
+	    'menuContent': {
+	      templateUrl: "templates/addvehicle.html",
+	      controller: 'AddVehicleCtrl'
+	    }
+	  }
+	});
   
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');

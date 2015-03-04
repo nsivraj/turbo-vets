@@ -1,4 +1,8 @@
 <ion-view view-title="Vehicle List">
+  <ion-nav-buttons side="secondary">
+       <a class="button button-icon ion-plus-circled" href="#/app/addvehicle">
+      </a>
+  </ion-nav-buttons>
   <ion-content>
     <h1>Vehicle List</h1>
     <ul class="dataTable">
@@ -6,7 +10,7 @@
     <span class="col">Make</span> <span class="col">Model</span> <span class="col">Year</span> <span class="col">VIN</span>
     </li>
     <li class="row dataRow" ng-repeat="vehicle in vroom">
-    <span class="col">{{vehicle.make}}</span> <span class="col">{{vehicle.model}}</span> <span class="col">{{vehicle.year}}</span> <span class="col">{{vehicle.vin}}</span>
+    <span class="col">{{vehicle.make}}</span> <span class="col">{{vehicle.model}}</span> <span class="col">{{vehicle.year}}</span> <span class="col">{{vehicle._id}}</span>
     </li>
     </ul>
   </ion-content>
