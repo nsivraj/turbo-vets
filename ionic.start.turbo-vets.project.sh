@@ -15,7 +15,7 @@ then
     android --help
     echo "Starting the turbo-vets ionic application, all output is being redirected to the file ./ionic.start.turbo-vets.project.out"
     echo "PLEASE WAIT FOR THIS SCRIPT TO FINISH...."
-	ionic start --id edu.self.turbovets --sass --appname "turbo-vets" turbo-vets tabs > ionic.start.turbo-vets.project.out 2>&1
+	ionic start --id edu.self.turbovets --sass --appname "turbo-vets" turbo-vets sidemenu > ionic.start.turbo-vets.project.out 2>&1
 	cd turbo-vets
 	ionic plugin add org.apache.cordova.inappbrowser >> ../ionic.start.turbo-vets.project.out 2>&1
 	ionic platform add ios >> ../ionic.start.turbo-vets.project.out 2>&1
