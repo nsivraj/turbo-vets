@@ -47,10 +47,25 @@ angular.module('starter.controllers', [])
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
 
-.controller('VehiclesCtrl', function($scope, Vehicles) {
-	$scope.vroom = Vehicles.all();
+.controller('VehiclesCtrl', function($scope, $timeout, Vehicles) {
+	//$scope.vroom = Vehicles.all();
 	
+//	while($scope.vroom.length <= 0) {
+//		$timeout(function() {
+//			$scope.vroom = Vehicles.all();
+//		}, 50);
+//	}
 	
+	$scope.refreshVehicles = function() {
+		Vehicles.clearOutVehicles();
+		
+		Vehicles.all( function(data) {
+			$scope.vroom = data;
+			$scope.$apply();
+		});
+	};
+	
+	$scope.refreshVehicles();
 })
 
 .controller('AddVehicleCtrl', function($scope, $stateParams, Vehicles) {
