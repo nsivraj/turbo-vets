@@ -13,7 +13,8 @@ angular.module('starter.services', [])
 //})
 
 .factory('DB', function() {
-	var db = new PouchDB('https://turbovets.iriscouch.com/turbo-vets');
+	//var db = new PouchDB('https://turbovets.iriscouch.com/turbo-vets');
+	var db = new PouchDB();
 	var remoteCouch = false;
 	
 	return {

@@ -44,9 +44,6 @@ angular.module('starter.controllers', [])
   ];
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-})
-
 .controller('VehiclesCtrl', function($scope, $timeout, Vehicles) {
 	//$scope.vroom = Vehicles.all();
 	
@@ -74,4 +71,14 @@ angular.module('starter.controllers', [])
 	$scope.saveVehicle = function(vehicle) {
 		Vehicles.save(vehicle);
 	};
+})
+
+
+.controller('VendorsCtrl', function($scope, $stateParams) {
+})
+
+.controller('RolesCtrl', function($scope, $stateParams) {
+})
+
+.controller('UsersCtrl', function($scope, $stateParams) {
 });

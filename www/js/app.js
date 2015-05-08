@@ -40,31 +40,32 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  .state('app.browse', {
-    url: "/browse",
+  .state('app.vendors', {
+    url: "/vendors",
     views: {
       'menuContent': {
-        templateUrl: "templates/browse.html"
+        templateUrl: "templates/vendors.html",
+        controller: 'VendorsCtrl'
       }
     }
   })
   
-  .state('app.playlists', {
-      url: "/playlists",
+  .state('app.roles', {
+      url: "/roles",
       views: {
         'menuContent': {
-          templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
+          templateUrl: "templates/roles.html",
+          controller: 'RolesCtrl'
         }
       }
   })
 
-  .state('app.single', {
-    url: "/playlists/:playlistId",
+  .state('app.users', {
+    url: "/users",
     views: {
       'menuContent': {
-        templateUrl: "templates/playlist.html",
-        controller: 'PlaylistCtrl'
+        templateUrl: "templates/users.html",
+        controller: 'UsersCtrl'
       }
     }
   })
@@ -80,5 +81,5 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 	});
   
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/vehicles');
 });
